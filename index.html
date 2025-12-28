@@ -3,514 +3,487 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Green Network - Protect Earth</title>
+    <title>Free Soaring Sky - Embrace the Freedom</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-
-        :root {
-            --primary: #2e7d32;
-            --secondary: #4caf50;
-            --accent: #8bc34a;
-            --light: #e8f5e9;
-            --dark: #1b5e20;
-            --text: #333333;
-            --white: #ffffff;
-        }
-
+        
         body {
-            background-color: var(--light);
-            color: var(--text);
+            font-family: 'Poppins', sans-serif;
             line-height: 1.6;
+            color: #333;
+            background: linear-gradient(to bottom, #87CEEB, #E0F6FF);
+            min-height: 100vh;
+            overflow-x: hidden;
         }
-
-        header {
-            background: linear-gradient(to right, var(--primary), var(--secondary));
-            color: var(--white);
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-
+        
         .container {
-            width: 90%;
             max-width: 1200px;
             margin: 0 auto;
+            padding: 0 20px;
         }
-
-        .nav-container {
+        
+        /* Header Styles */
+        header {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-
+        
         .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: #1a237e;
             display: flex;
             align-items: center;
-            gap: 10px;
-            font-size: 1.8rem;
-            font-weight: 700;
         }
-
+        
         .logo i {
-            font-size: 2rem;
+            margin-right: 10px;
+            color: #1a73e8;
         }
-
+        
         nav ul {
             display: flex;
             list-style: none;
         }
-
+        
         nav ul li {
-            margin-left: 2rem;
+            margin-left: 30px;
         }
-
+        
         nav ul li a {
-            color: var(--white);
             text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            padding: 0.5rem 0;
-            position: relative;
+            color: #1a237e;
+            font-weight: 600;
+            font-size: 18px;
+            transition: color 0.3s;
         }
-
+        
         nav ul li a:hover {
-            color: var(--accent);
+            color: #1a73e8;
         }
-
-        nav ul li a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: var(--accent);
-            transition: width 0.3s ease;
-        }
-
-        nav ul li a:hover::after {
-            width: 100%;
-        }
-
+        
+        /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2073&q=80');
-            background-size: cover;
-            background-position: center;
-            height: 80vh;
+            height: 100vh;
             display: flex;
             align-items: center;
-            text-align: center;
-            color: var(--white);
+            position: relative;
+            overflow: hidden;
         }
-
+        
         .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
+            max-width: 700px;
+            z-index: 10;
         }
-
+        
         .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 4.5rem;
+            color: #1a237e;
+            margin-bottom: 20px;
+            line-height: 1.1;
         }
-
+        
         .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 30px;
+            max-width: 600px;
         }
-
-        .btn {
+        
+        .cta-button {
             display: inline-block;
-            background-color: var(--accent);
-            color: var(--white);
-            padding: 0.8rem 2rem;
+            background: #1a73e8;
+            color: white;
+            padding: 15px 40px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
+            font-size: 1.2rem;
             transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 20px rgba(26, 115, 232, 0.3);
         }
-
-        .btn:hover {
-            background-color: var(--primary);
-            transform: translateY(-3px);
-            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+        
+        .cta-button:hover {
+            background: #0d62d9;
+            transform: translateY(-5px);
+            box-shadow: 0 15px 25px rgba(26, 115, 232, 0.4);
         }
-
+        
+        /* Flying Elements */
+        .bird {
+            position: absolute;
+            font-size: 2.5rem;
+            color: #333;
+            z-index: 5;
+            animation: fly linear infinite;
+        }
+        
+        .bird-1 {
+            top: 20%;
+            left: 5%;
+            animation-duration: 20s;
+        }
+        
+        .bird-2 {
+            top: 40%;
+            right: 10%;
+            animation-duration: 25s;
+        }
+        
+        .bird-3 {
+            top: 70%;
+            left: 15%;
+            animation-duration: 30s;
+        }
+        
+        .cloud {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+            z-index: 1;
+        }
+        
+        .cloud-1 {
+            width: 120px;
+            height: 40px;
+            top: 15%;
+            right: 5%;
+            animation: float 25s infinite linear;
+        }
+        
+        .cloud-2 {
+            width: 180px;
+            height: 60px;
+            top: 30%;
+            left: 10%;
+            animation: float 30s infinite linear reverse;
+        }
+        
+        .cloud-3 {
+            width: 100px;
+            height: 35px;
+            bottom: 25%;
+            right: 20%;
+            animation: float 20s infinite linear;
+        }
+        
+        /* Sections */
         section {
-            padding: 5rem 0;
+            padding: 100px 0;
         }
-
+        
         .section-title {
             text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .section-title h2 {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 1rem;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.8rem;
+            color: #1a237e;
+            margin-bottom: 60px;
             position: relative;
-            display: inline-block;
         }
-
-        .section-title h2::after {
+        
+        .section-title::after {
             content: '';
             position: absolute;
-            bottom: -10px;
+            width: 100px;
+            height: 4px;
+            background: #1a73e8;
+            bottom: -15px;
             left: 50%;
             transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background-color: var(--accent);
             border-radius: 2px;
         }
-
-        .section-title p {
-            color: var(--text);
-            max-width: 700px;
-            margin: 0 auto;
+        
+        /* Features Section */
+        .features {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(5px);
+            border-radius: 20px;
+            padding: 60px 40px;
+            margin-top: 30px;
         }
-
-        .about-content {
+        
+        .features-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
         }
-
-        .about-img {
-            border-radius: 10px;
+        
+        .feature-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            color: #1a73e8;
+            margin-bottom: 20px;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.8rem;
+            color: #1a237e;
+            margin-bottom: 15px;
+        }
+        
+        /* Quote Section */
+        .quote-section {
+            background: linear-gradient(rgba(26, 35, 126, 0.8), rgba(26, 115, 232, 0.8)), url('https://images.unsplash.com/photo-1502134249126-9f3755a50d78?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            text-align: center;
+            padding: 120px 0;
+            position: relative;
+        }
+        
+        .quote {
+            font-size: 2.2rem;
+            font-style: italic;
+            max-width: 900px;
+            margin: 0 auto 30px;
+            line-height: 1.4;
+        }
+        
+        .author {
+            font-size: 1.3rem;
+            font-weight: 300;
+        }
+        
+        /* Gallery */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+        
+        .gallery-item {
+            border-radius: 15px;
             overflow: hidden;
+            height: 250px;
+            position: relative;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
         }
-
-        .about-img img {
-            width: 100%;
-            height: auto;
-            display: block;
-            transition: transform 0.5s ease;
-        }
-
-        .about-img:hover img {
+        
+        .gallery-item:hover {
             transform: scale(1.05);
         }
-
-        .about-text h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-            color: var(--dark);
-        }
-
-        .about-text p {
-            margin-bottom: 1.5rem;
-        }
-
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .stat-item {
-            text-align: center;
-            padding: 2rem 1rem;
-            background-color: var(--white);
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease;
-        }
-
-        .stat-item:hover {
-            transform: translateY(-10px);
-        }
-
-        .stat-item i {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 1rem;
-        }
-
-        .stat-item h3 {
-            font-size: 2.5rem;
-            color: var(--dark);
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-item p {
-            color: var(--text);
-        }
-
-        .initiatives {
-            background-color: var(--white);
-        }
-
-        .initiatives-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-        }
-
-        .initiative-card {
-            background-color: var(--light);
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease;
-        }
-
-        .initiative-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .initiative-img {
-            height: 200px;
-            overflow: hidden;
-        }
-
-        .initiative-img img {
+        
+        .gallery-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: transform 0.5s ease;
         }
-
-        .initiative-card:hover .initiative-img img {
+        
+        .gallery-item:hover img {
             transform: scale(1.1);
         }
-
-        .initiative-content {
-            padding: 1.5rem;
-        }
-
-        .initiative-content h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--dark);
-        }
-
-        .initiative-content p {
-            margin-bottom: 1.5rem;
-        }
-
-        .cta {
-            background: linear-gradient(to right, var(--primary), var(--secondary));
-            color: var(--white);
-            text-align: center;
-            padding: 5rem 0;
-        }
-
-        .cta h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .cta p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .cta .btn {
-            background-color: var(--white);
-            color: var(--primary);
-        }
-
-        .cta .btn:hover {
-            background-color: var(--accent);
-            color: var(--white);
-        }
-
+        
+        /* Footer */
         footer {
-            background-color: var(--dark);
-            color: var(--white);
-            padding: 3rem 0 1rem;
+            background: #1a237e;
+            color: white;
+            padding: 60px 0 30px;
         }
-
+        
         .footer-content {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .footer-column h3 {
-            font-size: 1.3rem;
-            margin-bottom: 1.5rem;
-            position: relative;
-            padding-bottom: 10px;
-        }
-
-        .footer-column h3::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 40px;
-            height: 2px;
-            background-color: var(--accent);
-        }
-
-        .footer-column p {
-            margin-bottom: 1rem;
-        }
-
-        .footer-links {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: 0.8rem;
-        }
-
-        .footer-links li a {
-            color: var(--light);
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .footer-links li a:hover {
-            color: var(--accent);
-            padding-left: 5px;
-        }
-
-        .social-links {
             display: flex;
-            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 40px;
         }
-
-        .social-links a {
-            display: inline-flex;
+        
+        .footer-column {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #64b5f6;
+        }
+        
+        .footer-column p {
+            margin-bottom: 15px;
+            opacity: 0.8;
+        }
+        
+        .social-icons {
+            display: flex;
+            margin-top: 20px;
+        }
+        
+        .social-icons a {
+            display: flex;
             align-items: center;
             justify-content: center;
             width: 40px;
             height: 40px;
-            background-color: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.1);
             border-radius: 50%;
-            color: var(--white);
+            margin-right: 15px;
+            color: white;
             text-decoration: none;
-            transition: all 0.3s ease;
+            transition: background 0.3s ease;
         }
-
-        .social-links a:hover {
-            background-color: var(--accent);
-            transform: translateY(-5px);
+        
+        .social-icons a:hover {
+            background: #1a73e8;
         }
-
+        
         .copyright {
             text-align: center;
-            padding-top: 2rem;
+            padding-top: 30px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0.7;
         }
-
-        .mobile-menu {
-            display: none;
-            font-size: 1.5rem;
-            cursor: pointer;
+        
+        /* Animations */
+        @keyframes fly {
+            0% {
+                transform: translateX(-100px) translateY(0);
+            }
+            50% {
+                transform: translateX(calc(100vw + 100px)) translateY(-20px);
+            }
+            100% {
+                transform: translateX(calc(100vw + 100px)) translateY(0);
+            }
         }
-
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateX(0) translateY(0);
+            }
+            25% {
+                transform: translateX(-20px) translateY(-10px);
+            }
+            50% {
+                transform: translateX(20px) translateY(10px);
+            }
+            75% {
+                transform: translateX(-10px) translateY(5px);
+            }
+        }
+        
+        /* Responsive Styles */
         @media (max-width: 992px) {
-            .about-content {
-                grid-template-columns: 1fr;
-            }
-            
-            .initiatives-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .footer-content {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .stats {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 768px) {
             .hero h1 {
+                font-size: 3.5rem;
+            }
+            
+            .section-title {
                 font-size: 2.5rem;
             }
-            
-            .hero p {
-                font-size: 1.1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
             }
             
             nav ul {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background-color: var(--primary);
-                flex-direction: column;
-                padding: 1rem 0;
-                text-align: center;
-                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-            }
-            
-            nav ul.active {
-                display: flex;
+                margin-top: 20px;
             }
             
             nav ul li {
-                margin: 0;
-                padding: 0.8rem 0;
+                margin-left: 15px;
+                margin-right: 15px;
             }
             
-            .mobile-menu {
-                display: block;
+            .hero h1 {
+                font-size: 2.8rem;
             }
             
-            .initiatives-grid {
-                grid-template-columns: 1fr;
+            .hero p {
+                font-size: 1.2rem;
             }
             
-            .footer-content {
-                grid-template-columns: 1fr;
+            .section-title {
+                font-size: 2.2rem;
             }
             
-            .stats {
-                grid-template-columns: 1fr;
+            .quote {
+                font-size: 1.8rem;
             }
         }
-
-        /* Animation for stats counter */
-        .counter {
-            transition: all 0.5s ease;
+        
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .cta-button {
+                padding: 12px 30px;
+                font-size: 1rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .features {
+                padding: 40px 20px;
+            }
+            
+            .feature-card {
+                padding: 20px;
+            }
+            
+            .quote {
+                font-size: 1.5rem;
+            }
         }
     </style>
 </head>
 <body>
     <!-- Header -->
     <header>
-        <div class="container nav-container">
+        <div class="container header-content">
             <div class="logo">
-                <i class="fas fa-seedling"></i>
-                <span>Green Network</span>
+                <i class="fas fa-dove"></i>
+                <span>FreeSky</span>
             </div>
             <nav>
-                <div class="mobile-menu">
-                    <i class="fas fa-bars"></i>
-                </div>
                 <ul>
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
-                    <li><a href="#initiatives">Initiatives</a></li>
-                    <li><a href="#get-involved">Get Involved</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#inspiration">Inspiration</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
@@ -520,104 +493,82 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="container hero-content">
-            <h1>Protect Our Planet, Preserve Our Future</h1>
-            <p>Join the global movement to create a sustainable world through conservation, education, and community action.</p>
-            <a href="#get-involved" class="btn">Join Our Network</a>
+            <h1>Free Soaring Sky</h1>
+            <p>Where limits disappear and dreams take flight. Discover the infinite possibilities that await when you embrace the boundless freedom of the open sky.</p>
+            <a href="#about" class="cta-button">Explore Freedom</a>
         </div>
+        
+        <!-- Flying birds -->
+        <div class="bird bird-1"><i class="fas fa-dove"></i></div>
+        <div class="bird bird-2"><i class="fas fa-crow"></i></div>
+        <div class="bird bird-3"><i class="fas fa-feather-alt"></i></div>
+        
+        <!-- Clouds -->
+        <div class="cloud cloud-1"></div>
+        <div class="cloud cloud-2"></div>
+        <div class="cloud cloud-3"></div>
     </section>
 
     <!-- About Section -->
-    <section id="about">
+    <section id="about" class="about">
         <div class="container">
-            <div class="section-title">
-                <h2>About Green Network</h2>
-                <p>We are a global community dedicated to environmental protection and sustainable development.</p>
-            </div>
-            <div class="about-content">
-                <div class="about-img">
-                    <img src="https://images.unsplash.com/photo-1507591064344-4c6ce005b128?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Team planting trees">
-                </div>
-                <div class="about-text">
-                    <h3>Our Mission</h3>
-                    <p>Green Network is committed to creating a sustainable future by protecting natural ecosystems, promoting renewable energy, and empowering communities to take environmental action.</p>
-                    <p>Founded in 2010, we've grown from a small grassroots organization to an international network with over 50,000 members across 120 countries.</p>
-                    <p>Our approach combines scientific research, community engagement, and policy advocacy to address the most pressing environmental challenges of our time.</p>
-                    <a href="#" class="btn">Learn More</a>
-                </div>
-            </div>
-            <div class="stats">
-                <div class="stat-item">
-                    <i class="fas fa-tree"></i>
-                    <h3 class="counter" data-target="2500000">0</h3>
-                    <p>Trees Planted</p>
-                </div>
-                <div class="stat-item">
-                    <i class="fas fa-users"></i>
-                    <h3 class="counter" data-target="50000">0</h3>
-                    <p>Active Members</p>
-                </div>
-                <div class="stat-item">
-                    <i class="fas fa-globe-americas"></i>
-                    <h3 class="counter" data-target="120">0</h3>
-                    <p>Countries Reached</p>
-                </div>
-                <div class="stat-item">
-                    <i class="fas fa-recycle"></i>
-                    <h3 class="counter" data-target="1500">0</h3>
-                    <p>Cleanup Projects</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Initiatives Section -->
-    <section class="initiatives" id="initiatives">
-        <div class="container">
-            <div class="section-title">
-                <h2>Our Initiatives</h2>
-                <p>Discover the key programs and projects we're implementing to protect our planet.</p>
-            </div>
-            <div class="initiatives-grid">
-                <div class="initiative-card">
-                    <div class="initiative-img">
-                        <img src="https://dialogue.earth/content/uploads/2021/04/lessons-from-the-rush-to-reforest-china-dialogue-2400x1599.jpg" alt="Reforestation">
+            <h2 class="section-title">The Sky's the Limit</h2>
+            <div class="features">
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-wind"></i>
+                        </div>
+                        <h3>Boundless Freedom</h3>
+                        <p>The sky represents ultimate freedom - no borders, no boundaries, just endless space to explore and discover. It teaches us that our potential is limitless when we dare to soar.</p>
                     </div>
-                    <div class="initiative-content">
-                        <h3>Global Reforestation</h3>
-                        <p>Planting millions of trees worldwide to restore ecosystems, combat climate change, and protect biodiversity.</p>
-                        <a href="#" class="btn">Learn More</a>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-cloud-sun"></i>
+                        </div>
+                        <h3>Ever-Changing Canvas</h3>
+                        <p>From the fiery hues of sunrise to the deep purples of twilight, the sky is nature's masterpiece in constant motion. Each moment offers a new perspective and fresh inspiration.</p>
                     </div>
-                </div>
-                <div class="initiative-card">
-                    <div class="initiative-img">
-                        <img src="https://images.unsplash.com/photo-1621451537084-482c73073a0f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" alt="Ocean Conservation">
-                    </div>
-                    <div class="initiative-content">
-                        <h3>Ocean Conservation</h3>
-                        <p>Protecting marine ecosystems, reducing plastic pollution, and promoting sustainable fishing practices.</p>
-                        <a href="#" class="btn">Learn More</a>
-                    </div>
-                </div>
-                <div class="initiative-card">
-                    <div class="initiative-img">
-                        <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80" alt="Renewable Energy">
-                    </div>
-                    <div class="initiative-content">
-                        <h3>Renewable Energy</h3>
-                        <p>Promoting solar, wind, and other clean energy sources to reduce dependence on fossil fuels.</p>
-                        <a href="#" class="btn">Learn More</a>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-feather"></i>
+                        </div>
+                        <h3>Weightless Journey</h3>
+                        <p>To soar is to experience weightlessness, to rise above earthly concerns and see the world from a new vantage point. It's a reminder that we can transcend our limitations.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="cta" id="get-involved">
+    <!-- Quote Section -->
+    <section class="quote-section" id="inspiration">
         <div class="container">
-            <h2>Join Our Global Movement</h2>
-            <p>Together, we can create a sustainable future for generations to come. Every action counts, no matter how small.</p>
-            <a href="#" class="btn">Become a Member</a>
+            <div class="quote">
+                "The sky is an infinite movie to me. I never get tired of looking at what's happening up there."
+            </div>
+            <div class="author">- K.D. Lang</div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery">
+        <div class="container">
+            <h2 class="section-title">Skyward Views</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Clouds at sunset">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1502134249126-9f3755a50d78?ixlib=rb-1.2.1&auto=format&fit=crop&w-1350&q=80" alt="Bird flying in blue sky">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Mountain peak above clouds">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1439066615861-d1af74d74000?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Northern lights in night sky">
+                </div>
+            </div>
         </div>
     </section>
 
@@ -626,82 +577,40 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
-                    <h3>Green Network</h3>
-                    <p>We are dedicated to protecting our planet through collaborative action, education, and sustainable solutions.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <h3>Free Soaring Sky</h3>
+                    <p>Exploring the boundless freedom of the open sky and what it teaches us about life, dreams, and infinite possibilities.</p>
+                    <div class="social-icons">
                         <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
                 <div class="footer-column">
                     <h3>Quick Links</h3>
-                    <ul class="footer-links">
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#initiatives">Initiatives</a></li>
-                        <li><a href="#get-involved">Get Involved</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Our Programs</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">Reforestation</a></li>
-                        <li><a href="#">Ocean Cleanup</a></li>
-                        <li><a href="#">Wildlife Protection</a></li>
-                        <li><a href="#">Climate Education</a></li>
-                        <li><a href="#">Sustainable Agriculture</a></li>
-                    </ul>
+                    <p><a href="#home" style="color: white; text-decoration: none;">Home</a></p>
+                    <p><a href="#about" style="color: white; text-decoration: none;">About the Sky</a></p>
+                    <p><a href="#gallery" style="color: white; text-decoration: none;">Sky Gallery</a></p>
+                    <p><a href="#inspiration" style="color: white; text-decoration: none;">Inspiration</a></p>
                 </div>
                 <div class="footer-column">
                     <h3>Contact Us</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> Copper Creek Drive, New York</p>
-                    <p><i class="fas fa-phone"></i> +1 (312) 171-0771</p>
-                    <p><i class="fas fa-envelope"></i> support@greennetwork.org</p>
+                    <p><i class="fas fa-envelope"></i> info@freesky.com</p>
+                    <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Cloud Street, Skyville</p>
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2025 Green Network. All rights reserved.</p>
+                <p>&copy; 2023 Free Soaring Sky. All rights reserved. | Designed with <i class="fas fa-heart" style="color: #ff6b6b;"></i> for dreamers and skygazers.</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Mobile Menu Toggle
-        document.querySelector('.mobile-menu').addEventListener('click', function() {
-            document.querySelector('nav ul').classList.toggle('active');
-        });
-
-        // Counter Animation
-        function animateCounters() {
-            const counters = document.querySelectorAll('.counter');
-            const speed = 200; // The lower the slower
-            
-            counters.forEach(counter => {
-                const target = +counter.getAttribute('data-target');
-                const count = +counter.innerText;
-                
-                const inc = target / speed;
-                
-                if(count < target) {
-                    counter.innerText = Math.ceil(count + inc);
-                    setTimeout(animateCounters, 1);
-                } else {
-                    counter.innerText = target;
-                }
-            });
-        }
-
-        // Initialize counters when page loads
-        window.addEventListener('load', animateCounters);
-
         // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        document.querySelectorAll('nav a, .cta-button').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
-                
                 const targetId = this.getAttribute('href');
                 if(targetId === '#') return;
                 
@@ -711,12 +620,66 @@
                         top: targetElement.offsetTop - 80,
                         behavior: 'smooth'
                     });
-                    
-                    document.querySelector('nav ul').classList.remove('active');
                 }
             });
         });
+
+        // Add animation to birds on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const birds = document.querySelectorAll('.bird');
+            
+            // Animate birds on page load
+            setTimeout(() => {
+                birds.forEach(bird => {
+                    bird.style.animationPlayState = 'running';
+                });
+            }, 500);
+            
+            // Parallax effect for clouds
+            window.addEventListener('scroll', function() {
+                const scrolled = window.pageYOffset;
+                const clouds = document.querySelectorAll('.cloud');
+                
+                clouds.forEach((cloud, index) => {
+                    const speed = 0.3 + (index * 0.1);
+                    const yPos = -(scrolled * speed);
+                    cloud.style.transform = `translateY(${yPos}px)`;
+                });
+            });
+        });
+        
+        // Add interactive bird on click
+        document.addEventListener('click', function(e) {
+            // Only create birds if we're not clicking on a link or button
+            if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON') return;
+            
+            const bird = document.createElement('div');
+            bird.className = 'bird interactive';
+            bird.innerHTML = '<i class="fas fa-dove"></i>';
+            bird.style.position = 'fixed';
+            bird.style.left = e.clientX + 'px';
+            bird.style.top = e.clientY + 'px';
+            bird.style.fontSize = '1.8rem';
+            bird.style.color = '#1a73e8';
+            bird.style.zIndex = '1000';
+            bird.style.pointerEvents = 'none';
+            
+            document.body.appendChild(bird);
+            
+            // Animate the bird flying away
+            const animation = bird.animate([
+                { transform: 'translate(0, 0) scale(1)', opacity: 1 },
+                { transform: `translate(${Math.random() * 200 - 100}px, -200px) scale(0.5)`, opacity: 0 }
+            ], {
+                duration: 2000,
+                easing: 'cubic-bezier(0.215, 0.610, 0.355, 1)'
+            });
+            
+            // Remove bird after animation completes
+            animation.onfinish = () => {
+                bird.remove();
+            };
+        });
     </script>
 </body>
-
 </html>
